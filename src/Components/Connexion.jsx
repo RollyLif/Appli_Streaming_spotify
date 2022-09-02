@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import logo from "../assets/Logo.png"
 import { gapi } from "gapi-script";
+import Playlist from "./Playlist";
 
 function Connexion() {
-  const [check, setCheck] = useState(false);
   const [profile, setProfile] = useState([]);
   const clientId =
     "817294362644-g4qb4p2trqq6otjclu04ugiapioh3qk8.apps.googleusercontent.com";
@@ -35,7 +35,8 @@ function Connexion() {
     <div className="connect">
       {profile ? (
         <div>
-          <GoogleLogout
+        <Playlist />
+        <GoogleLogout
             clientId={clientId}
             buttonText="Log out"
             onLogoutSuccess={logOut}

@@ -3,7 +3,7 @@ import Liste from "./Liste";
 import { Credentials } from './Credentials';
 import axios from 'axios';
 
-function App() {
+function Playlist() {
   const data = [
     { name: "rolly", data: 1 },
     { name: "kadima", data: 2 },
@@ -17,12 +17,6 @@ function App() {
   const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
   const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []});
 
-  const genreChanged = val => {
-    setGenres({
-      selectedGenre: val, 
-      listOfGenresFromAPI: genres.listOfGenresFromAPI
-    });
-}
 
 const playlistChanged = val => {
     console.log(val);
@@ -54,6 +48,23 @@ const playlistChanged = val => {
     });
   }, [genres.selectedGenre, spotify.ClientId, spotify.ClientSecret]);
 
+  const genreChanged = val => {
+    setGenres({
+      selectedGenre: val, 
+      listOfGenresFromAPI: genres.listOfGenresFromAPI
+    });
+    axios(`https://api.spotify.com/v1/browse/categories/${val}/playlists?limit=10`, {
+      method: 'GET',
+      headers: { 'Authorization' : 'Bearer ' + token}
+    })
+    .then(playlistResponse => {
+      setPlaylist({
+        selectedPlaylist: playlist.selectedPlaylist,
+        listOfPlaylistFromAPI: playlistResponse.data.playlists.items
+      })
+    });
+
+  }
 
   return (
     <form>
@@ -67,4 +78,4 @@ const playlistChanged = val => {
     </form>
   );
 }
-export default App;
+export default Playlist;
