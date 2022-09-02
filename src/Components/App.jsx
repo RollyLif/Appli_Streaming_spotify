@@ -17,6 +17,7 @@ function App() {
   const spotify = Credentials();
   const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
   const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
+  const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []});
 
   const genreChanged = val => {
     setGenres({
@@ -24,6 +25,14 @@ function App() {
       listOfGenresFromAPI: genres.listOfGenresFromAPI
     });
 }
+
+const playlistChanged = val => {
+    console.log(val);
+    setPlaylist({
+      selectedPlaylist: val,
+      listOfPlaylistFromAPI: playlist.listOfPlaylistFromAPI
+    });
+  }
 
   useEffect(() => {
     axios("https://accounts.spotify.com/api/token", {
@@ -53,7 +62,7 @@ function App() {
       <div>
         <h1>Muzika</h1>
         <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
-        <Liste options={data} />
+        <Liste label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
         <button type="submit">Recherche</button>
         
       </div>
