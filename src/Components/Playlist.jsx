@@ -116,7 +116,7 @@ const playlistChanged = val => {
         </div>
       <div className="row">
             <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
-            {trackDetail && <Detail {...trackDetail} /> }
+            {console.log(tracks.listOfTracksFromAPI)}
       </div>
     </div> 
     </form>

@@ -80,6 +80,13 @@ aside {
   border-radius: 10px;
   background: rgba(252,146,0,0.5);
   box-shadow: 2px 2px 5px rgba(252,146,0);
+  cursor: pointer;
+}
+
+aside > p:hover {
+  color: rgba(255,255,255);
+  text-shadow: 2px 2px 5px white;
+  text-decoration : underline ;
 }
 @media (prefers-color-scheme: light) {
   :root {

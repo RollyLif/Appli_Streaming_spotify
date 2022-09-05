@@ -16,7 +16,7 @@ const Listbox = props => {
                         onClick={clicked}
                         id={item.track.id}>
                             
-                            {item.track.name}
+                            {item.track.name +" Artiste:"+item.track.artists[0].name}
                     </button>)
                 }
             </div>
