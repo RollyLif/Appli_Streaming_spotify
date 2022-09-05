@@ -32,7 +32,7 @@ function Connexion() {
   };
 
   return (
-    <div className="connect">
+    <div>
       {profile ? (
         <div>
         <Playlist nom={profile.name} image={profile.imageURL}/>
