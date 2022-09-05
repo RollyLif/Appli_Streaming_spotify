@@ -4,7 +4,7 @@ import { Credentials } from './Credentials';
 import axios from 'axios';
 import Listbox from "./Listbox";
 
-function Playlist() {
+function Playlist(props) {
   const data = [
     { name: "rolly", data: 1 },
     { name: "kadima", data: 2 },
@@ -96,6 +96,10 @@ const playlistChanged = val => {
     <form onSubmit={buttonClicked}>
       <div>
         <h1>Muzika</h1>
+        <p>
+          {props.nom}
+          <img src={props.image} alt="photo du profil" />
+        </p>
         <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
         <Liste label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
         <button type="submit">Recherche</button>

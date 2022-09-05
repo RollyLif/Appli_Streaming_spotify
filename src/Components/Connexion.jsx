@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import logo from "../assets/Logo.png"
+import logo from "../assets/Logofinal.png"
 import { gapi } from "gapi-script";
 import Playlist from "./Playlist";
 
@@ -35,7 +35,7 @@ function Connexion() {
     <div className="connect">
       {profile ? (
         <div>
-        <Playlist />
+        <Playlist nom={profile.name} image={profile.imageURL}/>
         <GoogleLogout
             clientId={clientId}
             buttonText="Log out"
@@ -44,8 +44,8 @@ function Connexion() {
         </div>
       ) : (
           <section className="connect">
-                <img src={logo} alt='logo' />
-              <p>Application de streaming basé sur l'API Spotify</p>
+              <img src={logo} alt='logo' className="logo"/>
+              <p className="presentation">Application de streaming basé sur l'API Spotify</p>
               <GoogleLogin
                 ClientId={clientId}
                 buttonText="Connexion avec Google"
@@ -53,6 +53,7 @@ function Connexion() {
                 onFailure={ConnexionEchoue}
                 cookiePolicy={"single_host_origin"}
                 isSignedIn={true}
+                className = "boutonGoogle"
               />
           </section>
       )}
