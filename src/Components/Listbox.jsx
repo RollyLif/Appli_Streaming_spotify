@@ -12,12 +12,12 @@ const Listbox = props => {
             <div className="list-group">
                 {
                     props.items.map((item, idx) => 
-                    <button key={idx}
-                        onClick={clicked}
+                    <div key={idx}
                         id={item.track.id}>
-                            
-                            {item.track.name +" Artiste:"+item.track.artists[0].name}
-                    </button>)
+                        <p>{item.track.name}</p>
+                        <img src={item.track.album.images[2].url} alt="photo" />
+                        <p>{item.track.artists[0].name}</p>
+                    </div>)
                 }
             </div>
         </div>
