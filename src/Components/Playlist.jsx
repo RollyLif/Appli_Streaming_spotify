@@ -4,6 +4,9 @@ import { Credentials } from './Credentials';
 import axios from 'axios';
 import Listbox from "./Listbox";
 import logo from "../assets/Logofinal.png";
+import {BsSearch} from 'react-icons/bs';
+import {RiPlayList2Line} from 'react-icons/ri';
+import {AiFillHome} from 'react-icons/ai';
 
 function Playlist(props) {
   const data = [
@@ -105,14 +108,14 @@ const playlistChanged = val => {
         </div>
         <div className="corps">
           <aside>
-            <p>Acceuil</p>
-            <p>Playlist</p>
+            <p><AiFillHome className ="icone"/> Acceuil</p>
+            <p><RiPlayList2Line className ="icone"/> Playlist</p>
           </aside>
           <div>
-            <div>
+            <div className="selection">
               <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
               <Liste label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
-              <button type="submit">Recherche</button>
+              <button type="submit"><BsSearch /></button>
             </div>
               <div className="row">
               <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />

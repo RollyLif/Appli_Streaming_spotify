@@ -83,10 +83,19 @@ aside {
   cursor: pointer;
 }
 
+aside > p {
+  text-align: center;
+  display:flex;
+}
+
 aside > p:hover {
   color: rgba(255,255,255);
   text-shadow: 2px 2px 5px white;
   text-decoration : underline ;
+}
+
+.icone {
+  margin :2px;
 }
 
 .Songtitle {
@@ -143,6 +152,32 @@ aside > p:hover {
   grid-template-columns: repeat(7, 1fr);
   overflow: auto;
   height : 60vh;
+}
+
+.selection {
+  display : flex;
+  justify-content: space-around;
+  color :black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+select {
+  width: 200px;
+  height: 25px;
+  font-style: italic;
+}
+
+label {
+  color:#fc9200;
+  font-style: italic;
+}
+
+button {
+  color: #fc9200;
+  background: white;
+  font-weight: bolder;
+
 }
 @media (prefers-color-scheme: light) {
   :root {
