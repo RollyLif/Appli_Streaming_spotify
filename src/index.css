@@ -88,6 +88,62 @@ aside > p:hover {
   text-shadow: 2px 2px 5px white;
   text-decoration : underline ;
 }
+
+.Songtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  height: 27px;
+  margin: 0px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.artist {
+  margin : 0px;
+  font-weight: 100;
+  font-style: oblique;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center; 
+  height: 18px;
+}
+
+.albumImage {
+  width: 80%;
+  border-radius: 136px;
+}
+
+.track {
+  padding: 5px;
+  display : flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: black;
+  justify-content: space-around;
+  border : solid 2px black;
+  border-radius: 10px;
+  margin: 10px;
+  width: 9vw;
+  box-shadow: 2px 2px 5px black;
+}
+
+.track:hover {
+  border : solid 2px whitesmoke;
+  color: whitesmoke;
+  box-shadow: 2px 2px 5px whitesmoke;
+}
+
+.list-group {
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  overflow: auto;
+  height : 60vh;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

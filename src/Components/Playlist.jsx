@@ -109,15 +109,17 @@ const playlistChanged = val => {
             <p>Playlist</p>
           </aside>
           <div>
-          <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
-          <Liste label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
-          <button type="submit">Recherche</button>
+            <div>
+              <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
+              <Liste label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
+              <button type="submit">Recherche</button>
+            </div>
+              <div className="row">
+              <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
+            </div>
           </div>
         </div>
-      <div className="row">
-            <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
-            {console.log(tracks.listOfTracksFromAPI)}
-      </div>
+      
     </div> 
     </form>
   );
