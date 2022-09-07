@@ -7,6 +7,7 @@ import logo from "../assets/Logofinal.png";
 import {BsSearch} from 'react-icons/bs';
 import {RiPlayList2Line} from 'react-icons/ri';
 import {AiFillHome} from 'react-icons/ai';
+import {Buffer} from 'buffer';
 
 function Playlist(props) {
   const data = [
@@ -34,8 +35,8 @@ const playlistChanged = val => {
   useEffect(() => {
     axios("https://accounts.spotify.com/api/token", {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Authorization':'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret),
+        "content-type": "application/x-www-form-urlencoded",
+        "Authorization": "Basic " +  Buffer.from(spotify.ClientId + ':' + spotify.ClientSecret).toString('Base64'),
       },
       data: "grant_type=client_credentials",
       method: "POST",
@@ -119,6 +120,7 @@ const playlistChanged = val => {
             </div>
               <div className="row">
               <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
+              {console.log(tracks.listOfTracksFromAPI)}
             </div>
           </div>
         </div>
