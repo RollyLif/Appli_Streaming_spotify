@@ -103,15 +103,15 @@ const playlistChanged = val => {
         <div className="entete">
           <img src={logo} alt="logo"/>
           <div className="identite">
-            <img src={props.image} alt="photo" />
+            <img src={props.image} alt="photo"/>
             <span>{props.nom}</span>
           </div>
         </div>
         <div className="corps">
-          <aside>
+          {/*<aside>
             <p><AiFillHome className ="icone"/> Acceuil</p>
             <p><RiPlayList2Line className ="icone"/> Playlist</p>
-          </aside>
+  </aside>*/}
           <div>
             <div className="selection">
               <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />

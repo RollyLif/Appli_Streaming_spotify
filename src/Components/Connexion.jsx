@@ -19,6 +19,7 @@ function Connexion() {
   });
 
   const ConnexionReussie = (res) => {
+    console.log("logique");
     console.log(res);
     setProfile(res.profileObj);
   };
@@ -35,7 +36,7 @@ function Connexion() {
     <div>
       {profile ? (
         <div>
-        <Playlist nom={profile.name} image={profile.imageURL}/>
+        <Playlist nom={profile.name} image={profile.imageUrl}/>
         <GoogleLogout
             clientId={clientId}
             buttonText="Log out"
