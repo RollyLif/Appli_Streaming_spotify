@@ -7,6 +7,8 @@ import Playlist from "./Playlist";
 function Connexion() {
   const [profile, setProfile] = useState([]);
   const clientId = "817294362644-g4qb4p2trqq6otjclu04ugiapioh3qk8.apps.googleusercontent.com";
+
+
   useEffect(() => {
     const initClient = () => {
       gapi.client.init({
@@ -15,6 +17,8 @@ function Connexion() {
       });
     };
     gapi.load("client:auth2", initClient);
+    console.log(profile);
+
   });
 
   const ConnexionReussie = (res) => {
@@ -33,7 +37,7 @@ function Connexion() {
 
   return (
     <div>
-      {profile ? (
+      {(profile) ? (
         <div>
         <Playlist nom={profile.name} image={profile.imageUrl}/>
         <GoogleLogout
@@ -51,7 +55,7 @@ function Connexion() {
                 buttonText="Connexion avec Google"
                 onSuccess={ConnexionReussie}
                 onFailure={ConnexionEchoue}
-                cookiePolicy={"single_host_origin"}
+                cookiePolicy={'single_host_origin'}
                 isSignedIn={true}
                 className = "boutonGoogle"
               />
