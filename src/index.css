@@ -152,6 +152,7 @@ aside > p:hover {
   flex-wrap: wrap;
   overflow: auto;
   height : 60vh;
+
 }
 
 .selection {
@@ -177,7 +178,15 @@ button {
   color: #fc9200;
   background: white;
   font-weight: bolder;
+}
+.identite{
+  display: flex;
+  align-items: center;
+}
 
+.identite>img {
+  width: 50px;
+  border-radius: 25px;
 }
 @media (prefers-color-scheme: light) {
   :root {

@@ -10,11 +10,6 @@ import {AiFillHome} from 'react-icons/ai';
 import {Buffer} from 'buffer';
 
 function Playlist(props) {
-  const data = [
-    { name: "rolly", data: 1 },
-    { name: "kadima", data: 2 },
-    { name: "Lifungula", data: 3 },
-  ];
 
   const [token, setToken] = useState("");
   const spotify = Credentials();
@@ -108,10 +103,10 @@ const playlistChanged = val => {
           </div>
         </div>
         <div className="corps">
-          {/*<aside>
+          <aside>
             <p><AiFillHome className ="icone"/> Acceuil</p>
             <p><RiPlayList2Line className ="icone"/> Playlist</p>
-  </aside>*/}
+  </aside>
           <div>
             <div className="selection">
               <Liste label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />

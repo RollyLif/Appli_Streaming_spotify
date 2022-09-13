@@ -6,8 +6,7 @@ import Playlist from "./Playlist";
 
 function Connexion() {
   const [profile, setProfile] = useState([]);
-  const clientId =
-    "817294362644-g4qb4p2trqq6otjclu04ugiapioh3qk8.apps.googleusercontent.com";
+  const clientId = "817294362644-g4qb4p2trqq6otjclu04ugiapioh3qk8.apps.googleusercontent.com";
   useEffect(() => {
     const initClient = () => {
       gapi.client.init({
