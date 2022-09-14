@@ -9,7 +9,9 @@ const Acceuil = () => {
                 <p>Artists</p>
                 <p>Playlist</p>
             </div>
-            <div>contenu</div>
+            <div>Album populaire(5)
+                playlistPopulaire(5)
+            </div>
             <div>Musique populaire</div>
             
         </div>

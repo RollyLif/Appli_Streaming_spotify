@@ -1,8 +1,8 @@
 const Credentials = () => {
 
     return {
-        ClientId: '2d3360aa9f3d44e7a0d76cc858d9fdcb',
-        ClientSecret: 'ddc32383cc8547949a27552c8027693e'
+        ClientId: import.meta.env.VITE_CLIENT_ID,
+        ClientSecret: import.meta.env.VITE_CLIENT_SECRET,
     }
 }
 
